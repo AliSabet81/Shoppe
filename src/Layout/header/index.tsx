@@ -33,19 +33,19 @@ const Header =()=> {
 
 
   return (
-    <div className='container flex items-center pb-4 border-b justify-between max-w-7xl'>
+    <div className='container flex items-center pb-4 border-b justify-between'>
         <Link to={ROUTES.Home}><img src={LOGO} alt="" /></Link>
         <div className='flex items-center gap-12'>
             <div className='flex gap-11'>
-                <Button sx={{color:"black"}}>Shop</Button>
-                <Button sx={{color:"black"}}>Blog</Button>
-                <Button sx={{color:"black"}}>Our Story</Button>
+                <Button href={ROUTES.Shop} sx={{color:"black"}}>Shop</Button>
+                <Button href={`${ROUTES.Blog}/fasion`} sx={{color:"black"}}>Blog</Button>
+                <Button href={ROUTES.OurStory} sx={{color:"black"}}>Our Story</Button>
             </div>
             <Divider orientation="vertical" flexItem />
             <div className='flex gap-6'>
                 <IconButton><SearchIcon/></IconButton>
                 <IconButton><ShoppingCartOutlinedIcon/></IconButton>
-                <IconButton href={ROUTES.Auth}><PersonOutlineOutlinedIcon/></IconButton>
+                <IconButton href={ROUTES.Login}><PersonOutlineOutlinedIcon/></IconButton>
             </div>
         </div>
     </div>
