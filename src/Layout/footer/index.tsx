@@ -1,4 +1,4 @@
-import { Button, Grid, IconButton, Input, InputAdornment } from "@mui/material";
+import { Button, IconButton, Input, InputAdornment } from "@mui/material";
 import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

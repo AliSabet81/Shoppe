@@ -1,5 +1,4 @@
 import { Button } from "@mui/material";
-import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import Dashboard from "./Dashboard";
 import Orders from "./Orders";
