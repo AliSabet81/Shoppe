@@ -1,15 +1,42 @@
-import { Box, Button, IconButton, Input, InputAdornment } from "@mui/material";
+import { Box, Button, IconButton, Input, InputAdornment, TextField } from "@mui/material";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../../routes";
+import UseLogin from "./useLogin";
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+
 
 const Login = () => {
+  const {register,
+    handleLogin,
+    handleSubmit,
+    errors,
+    passwordType,
+    setPasswordType} = UseLogin()
+  
     return ( 
-        <Box className="w-full flex flex-col gap-4" component={'form'}>
-            <Input className="p-3" fullWidth id="standard-adornment-weight" 
+        <Box className="w-full flex flex-col gap-4"
+        onSubmit={handleSubmit(handleLogin)}
+        component={'form'}>
+            <TextField className="p-3" fullWidth id="standard-adornment-weight" 
+            {...register('email')} error={Boolean(errors.email?.message)} helperText={errors.email?.message}
                 aria-describedby="standard-weight-helper-text" placeholder="Email"/>
-            <Input className="mt-10 p-3 !border-slate-200" fullWidth id="standard-adornment-weight" 
-                endAdornment={<InputAdornment position="end"><IconButton><RemoveRedEyeOutlinedIcon/></IconButton></InputAdornment>}
+            <TextField className="mt-10 p-3 !border-slate-200" fullWidth id="standard-adornment-weight" 
+            {...register('password')} error={Boolean(errors.password?.message)} helperText={errors.password?.message}
+
+            InputProps={{
+              endAdornment:( 
+                  <InputAdornment position="start">
+                      <IconButton onClick={()=>{
+                          setPasswordType((prev)=>{
+                              if (prev === 'password') return 'text'
+                              return 'password'
+                          })
+                          }}>
+                          {passwordType === "text" ?<RemoveRedEyeOutlinedIcon/> : <VisibilityOffOutlinedIcon/>}
+                      </IconButton>
+                  </InputAdornment>),
+          }}
                 aria-describedby="standard-weight-helper-text" placeholder="Password"/>
             <Button className="!mt-10 !py-4" type="submit" variant="contained" fullWidth sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>Sign In</Button>
             <Link to={ROUTES.ForgetPassword}>Have you forgotten your password?</Link>
@@ -18,30 +45,3 @@ const Login = () => {
 }
  
 export default Login;
-
-
-{/* <form
-      className="w-full flex flex-col gap-4"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <input
-        className="w-full outline-none border-b p-3 border-slate-200"
-        placeholder="Email"
-        type="text"
-        {...register("email")}
-      />
-      <p className="text-red-700">{errors.email?.message as ReactNode}</p>
-      <input
-        className="w-full mt-10 outline-none border-b p-3 border-slate-200"
-        placeholder="Password"
-        type="text"
-        {...register("password")}
-      />
-      <p className="text-red-700">{errors.password?.message as ReactNode}</p>
-      <button type="submit" className="w-full mt-10 bg-black text-white p-4">
-        Sign In
-      </button>
-      <Link className="text-center" to={"/auth/forget"}>
-        Have you forgotten your password?
-      </Link>
-    </form> */}

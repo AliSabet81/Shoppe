@@ -17,7 +17,7 @@ const ProductCard = (i:IProductCard) => {
             </div>
             <div className="flex flex-col gap-4">
                 <h4 className="font-normal text-xl">{i.name}</h4>
-                <h5 className="font-medium text-xl">{i.price}</h5>
+                <h5 className="font-medium text-amber-700 text-xl">{i.price}</h5>
             </div>
         </div>
      );

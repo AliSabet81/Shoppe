@@ -12,15 +12,18 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.1.1",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
     "react-router-dom": "^6.11.2",
     "sort-by": "^0.0.2",
-    "swiper": "^9.3.2"
+    "swiper": "^9.4.1",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

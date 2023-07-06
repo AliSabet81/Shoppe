@@ -12,9 +12,10 @@ const ShopScreen = () => {
                     <Input className=" py-2 !border-slate-200" fullWidth id="standard-adornment-weight" 
                     endAdornment={<InputAdornment position="end"><IconButton><SearchIcon/></IconButton></InputAdornment>}
                     aria-describedby="standard-weight-helper-text" placeholder="ُsearch..."/>
+                    
                 </div>
                 <div className="grid grid-cols-3 gap-10 justify-items-center">
-                    {Product.map((i)=> <ProductCard img={i.img} name={i.name} price={i.price}/>)}
+                    {Product.map((i)=> <ProductCard img={i.img} name={i.name} price={i.price} index={0}/>)}
                 </div>
             </div>
         </div>

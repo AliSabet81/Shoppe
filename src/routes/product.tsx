@@ -9,7 +9,7 @@ export interface IProductCard {
     img: string,
     name: string,
     price:string,
-    index?:number
+    index:number
 }
 
 export const Product : IProductCard[] =  [

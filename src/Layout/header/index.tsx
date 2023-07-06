@@ -7,6 +7,7 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Button, Ico
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes';
 import LOGO from "../../../public/LOGO.png"
+import ShoppingCartDrawer from '../../components/cartDrawer';
 const navItems = ['Home', 'About', 'Contact'];
 
 const Header =()=> {
@@ -44,7 +45,7 @@ const Header =()=> {
             <Divider orientation="vertical" flexItem />
             <div className='flex gap-6'>
                 <IconButton><SearchIcon/></IconButton>
-                <IconButton><ShoppingCartOutlinedIcon/></IconButton>
+                <ShoppingCartDrawer/>
                 <IconButton href={ROUTES.Login}><PersonOutlineOutlinedIcon/></IconButton>
             </div>
         </div>

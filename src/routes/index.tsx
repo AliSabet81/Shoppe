@@ -15,6 +15,7 @@ const BlogsScreen = React.lazy(()=>import('../screens/Blogs'))
 const OneBlogScreen = React.lazy(()=>import('../screens/Blogs/oneBlog'))
 const PrivacyPolicyScreen = React.lazy(()=>import('../screens/PrivacyPolicy'))
 const OurStory = React.lazy(()=>import('../screens/ourStory'))
+const ProductPage = React.lazy(()=>import('../screens/product'))
 
 export const ROUTES = {
     Home : "/",
@@ -124,6 +125,10 @@ export const Router = createBrowserRouter([
                 //         path:ROUTES.Dashboard
                 //     },
                 // ]
+            },
+            {
+                path:ROUTES.Product,
+                element:<ProductPage/>
             }
         ]
     }
