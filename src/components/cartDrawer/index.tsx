@@ -39,7 +39,7 @@ import { ROUTES } from '../../routes';
                 <div className='py-5 flex justify-between'>
                 <span>Subtotal (5 items)</span><span>$ 100,00</span>
                 </div>
-                <Button href={ROUTES.Home} className="!py-4 !px-12 !border-2" fullWidth variant="outlined" sx={{color:"black",":hover":{bgcolor:"white",borderColor:"gray"},borderColor:"black"}}>VIEW CART</Button>
+                <Button href={ROUTES.Cart} className="!py-4 !px-12 !border-2" fullWidth variant="outlined" sx={{color:"black",":hover":{bgcolor:"white",borderColor:"gray"},borderColor:"black"}}>VIEW CART</Button>
             </div>
         </div>
     </Box>

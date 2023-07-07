@@ -15,7 +15,7 @@ const ShopScreen = () => {
                     
                 </div>
                 <div className="grid grid-cols-3 gap-10 justify-items-center">
-                    {Product.map((i)=> <ProductCard img={i.img} name={i.name} price={i.price} index={0}/>)}
+                    {Product.map((i)=> <ProductCard img={i.img} name={i.name} price={i.price} index={0} path={i.path}/>)}
                 </div>
             </div>
         </div>

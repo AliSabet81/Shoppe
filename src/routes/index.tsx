@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../screens/Blogs/blogs";
 import ErrorScreen from "../screens/404";
 import AccountScreen from "../screens/account";
+import CartPage from "../screens/Cart";
 const Layout = React.lazy(()=>import('../Layout'))
 const HomeScreen = React.lazy(()=>import('../screens/home'))
 const AuthScreen = React.lazy(()=>import('../screens/auth'))
@@ -21,7 +22,7 @@ export const ROUTES = {
     Home : "/",
 
     Shop : "/Shop",
-    Product: "/shop/:id",
+    Product: "/Shop/:id",
 
     Auth : "/auth",
     Login : "/auth/login",
@@ -42,6 +43,8 @@ export const ROUTES = {
     Downloads : "/account/doownloads",
     Addresses: "/account/addresses",
     Details: "/account/details",
+
+    Cart : "/cart"
 }
 
 export const Router = createBrowserRouter([
@@ -129,6 +132,10 @@ export const Router = createBrowserRouter([
             {
                 path:ROUTES.Product,
                 element:<ProductPage/>
+            },
+            {
+                path:ROUTES.Cart,
+                element : <CartPage/>
             }
         ]
     }
