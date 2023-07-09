@@ -3,7 +3,7 @@ import { Box, Button, Input } from "@mui/material";
 const Details = () => {
     return ( 
         <Box component={"form"} className="flex flex-col gap-9 max-w-lg m-auto">
-            <h1 className="text-4xl font-medium text-center">Account Details</h1>
+            <h1 className="hidden sm:block text-4xl font-medium text-center">Account Details</h1>
             <Input className="pb-3" fullWidth id="standard-adornment-weight" 
                 aria-describedby="standard-weight-helper-text" placeholder="First name*"/>
             <Input className="pb-3" fullWidth id="standard-adornment-weight" 
@@ -22,7 +22,7 @@ const Details = () => {
                 aria-describedby="standard-weight-helper-text" placeholder="New password (leave blank to leave unchanged)"/>
             <Input className="pb-3" fullWidth id="standard-adornment-weight" 
                 aria-describedby="standard-weight-helper-text" placeholder="Confirm New Password"/>
-            <Button className="!py-4" type="submit" fullWidth variant="contained" sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>SAVE CHANGES</Button>
+            <Button className="sm:!py-4" type="submit" fullWidth variant="contained" sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>SAVE CHANGES</Button>
         </Box>
      );
 }

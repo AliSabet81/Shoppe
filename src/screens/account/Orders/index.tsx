@@ -7,7 +7,7 @@ const Orders = () => {
             <OneOrder number={879980998990} date={"October 8,2021"} status={"Delivered"} total={65} action={""} variant={"noOrder"}/>
             </div>
             <h1 className="mb-5">OR</h1>
-            <div className="grid grid-cols-5 border-b border-black pb-4">
+            <div className="hidden sm:grid grid-cols-5 border-b border-black pb-4">
                 <h3>ORDER NUMBER</h3>
                 <h3>DATE</h3>
                 <h3>STATUS</h3>

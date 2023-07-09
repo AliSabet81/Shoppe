@@ -1,12 +1,15 @@
-import { Button } from "@mui/material";
+import { Box,Tab, Tabs, tabsClasses } from "@mui/material";
 import { useState } from "react";
 import Dashboard from "./Dashboard";
 import Orders from "./Orders";
 import Downloads from "./Downloads";
 import Addresses from "./Addresses";
 import Details from "./Details";
-
 const AccountScreen = () => {
+    const [value, setValue] = useState(0);
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setValue(newValue);
+    };
     const [active , setActive] = useState<string>("Dashboard")
     const Account = () => {
         switch (active) {
@@ -20,14 +23,29 @@ const AccountScreen = () => {
     return ( 
         <div className="flex flex-col gap-16 mt-24 items-center">
             <h1 className="text-4xl font-medium">My Account</h1>
-            <div className='flex gap-11 w-full border-b'>
-                <Button onClick={()=>setActive("Dashboard")} className={active==="Dashboard" ? "!text-black" : "!text-gray-400"}>Dashboard</Button>
-                <Button onClick={()=>setActive("Orders")} className={active==="Orders" ? "!text-black" : "!text-gray-400"}>Orders</Button>
-                <Button onClick={()=>setActive("Downloads")} className={active==="Downloads" ? "!text-black" : "!text-gray-400"}>Downloads</Button>
-                <Button onClick={()=>setActive("Addresses")} className={active==="Addresses" ? "!text-black" : "!text-gray-400"}>Addresses</Button>
-                <Button onClick={()=>setActive("Details")} className={active==="Details" ? "!text-black" : "!text-gray-400"}>Account details</Button>
-                <Button onClick={()=>setActive("Logout")} className={active==="Logout" ? "!text-black" : "!text-gray-400"}>Logout</Button>
-            </div>
+
+            <Box alignSelf={"flex-start"} width={"100%"} borderBottom={0.5} sx={{ bgcolor: 'background.paper',borderColor:"GrayText" }}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    variant="scrollable" 
+                    // scrollButtons
+                    allowScrollButtonsMobile
+                    sx={{
+                        [`& .${tabsClasses.scrollButtons}`]: {
+                          '&.Mui-disabled': { opacity: 0.3 },
+                        },
+                      }}
+                    aria-label="scrollable force tabs example"
+                    >
+                    <Tab onClick={()=>setActive("Dashboard")} label="Dashboard" />
+                    <Tab onClick={()=>setActive("Orders")} label="Orders" />
+                    <Tab onClick={()=>setActive("Downloads")} label="Downloads" />
+                    <Tab onClick={()=>setActive("Addresses")} label="Addresses" />
+                    <Tab onClick={()=>setActive("Details")} label="Account details" />
+                    <Tab onClick={()=>setActive("Logout")} label="Logout" />
+                </Tabs>
+            </Box>
             <div className="w-full"><Account/></div>
         </div>
      );

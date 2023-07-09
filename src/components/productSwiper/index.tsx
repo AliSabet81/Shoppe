@@ -24,11 +24,11 @@ export const ProductSwiper = (i:IProductSwiper) => {
             scrollbar={true}
             navigation={true}
             modules={[ Scrollbar, Navigation]}
-            className="w-full h-600"
+            className="w-full h-productslide"
           >
             {i.imgs.map(i=>
                 <SwiperSlide >
-                    <img className='h-600' src={i} />
+                    <img className='h-productslide' src={i} />
                 </SwiperSlide>
             )}
           </Swiper>

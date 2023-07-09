@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { IconButton } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { ROUTES } from '../../routes';
-
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
  const ShoppingCartDrawer =()=> {
   const [state, setState] = React.useState(
     false
@@ -33,13 +33,18 @@ import { ROUTES } from '../../routes';
       onKeyDown={toggleDrawer( false)}
       sx={{height:"100%"}}
     >
-        <div className='w-96 px-9 pt-16 pb-7 flex flex-col justify-between h-full'>
-            <h1>Shopping bag</h1>
+        <div className='w-80 sm:w-96 px-4 sm:px-9 pt-3 sm:pt-16 pb-7 flex flex-col justify-between h-full'>
+            <div className='flex items-center gap-14 sm:gap-20'>
+              <IconButton className='sm:hidden' onClick={toggleDrawer(false)}>
+                <ArrowBackIosNewRoundedIcon />
+              </IconButton>
+              <h1>Shopping bag</h1>
+            </div>
             <div className='border-t border-gray-500'>
                 <div className='py-5 flex justify-between'>
                 <span>Subtotal (5 items)</span><span>$ 100,00</span>
                 </div>
-                <Button href={ROUTES.Cart} className="!py-4 !px-12 !border-2" fullWidth variant="outlined" sx={{color:"black",":hover":{bgcolor:"white",borderColor:"gray"},borderColor:"black"}}>VIEW CART</Button>
+                <Button href={ROUTES.Cart} className="sm:!py-4 !px-12 !border-2" fullWidth variant="outlined" sx={{color:"black",":hover":{bgcolor:"white",borderColor:"gray"},borderColor:"black"}}>VIEW CART</Button>
             </div>
         </div>
     </Box>

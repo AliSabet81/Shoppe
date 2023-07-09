@@ -7,13 +7,15 @@ import { ROUTES } from "../../routes";
 
 const BlogsScreen = () => {
     return ( 
-        <div className="flex flex-col gap-10 my-24 container">
+        <div className="flex flex-col gap-10 sm:my-24 mt-10 mb-24 container">
             <h1 className="text-3xl font-medium">Blog</h1>
-            <div className="flex gap-9">
+            <div className="flex flex-col-reverse sm:flex-row gap-9">
                 <div className="w-80">
-                    <Input className=" py-2 !border-slate-200" fullWidth id="standard-adornment-weight" 
+                    <div className="hidden sm:block">
+                    <Input className="py-2 !border-slate-200" fullWidth id="standard-adornment-weight" 
                     endAdornment={<InputAdornment position="end"><IconButton><SearchIcon/></IconButton></InputAdornment>}
                     aria-describedby="standard-weight-helper-text" placeholder="ُsearch..."/>
+                    </div>
                     <div className="flex flex-col gap-3 mt-16">
                         <h2 className="text-xl font-medium">Categories</h2>
                         <Button href={`${ROUTES.Blog}/fasion`} className="!w-fit" sx={{color:"gray"}}>Fasion</Button>

@@ -2,8 +2,8 @@ import { Box, Button, Input } from "@mui/material";
 
 const AddNewBil = () => {
     return ( 
-        <Box component={"form"} className="flex flex-col gap-9">
-            <div className="grid grid-cols-2 gap-10">
+        <Box component={"form"} className="flex flex-col gap-5 sm:gap-9">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-10">
                 <Input className="pb-3" fullWidth id="standard-adornment-weight" 
                     aria-describedby="standard-weight-helper-text" placeholder="First name *"/>
                 <Input className="pb-3" fullWidth id="standard-adornment-weight" 
@@ -23,7 +23,7 @@ const AddNewBil = () => {
                 aria-describedby="standard-weight-helper-text" placeholder="Phone *"/>
             <Input className="pb-3" fullWidth id="standard-adornment-weight" 
                 aria-describedby="standard-weight-helper-text" placeholder="Email *"/>
-            <Button className="!px-16 !py-4 !w-fit" type="submit" variant="contained" sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>SAVE ADDRESS</Button>
+            <Button className="!px-16 sm:!py-4 !w-full sm:!w-fit" type="submit" variant="contained" sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>SAVE ADDRESS</Button>
         </Box>
      );
 }

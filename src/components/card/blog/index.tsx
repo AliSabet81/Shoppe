@@ -5,14 +5,14 @@ import { IBlogCard } from "../../../routes/blogs";
 
 const BlogCard = (i:IBlogCard) => {
     return ( 
-        <div className="w-full flex flex-col gap-6">
+        <div className="w-full flex flex-col gap-4 sm:gap-6">
             <img src={i.img} alt="" />
-            <div className="flex flex-col gap-4">
-                <div className="font-normal text-base"><span>{i.category}</span> - <span>{i.date}</span></div>
-                <h4 className="font-normal text-xl">{i.title}</h4>
-                <h5 className="font-normal text-base">{i.desc}</h5>
+            <div className="flex flex-col gap-2 sm:gap-4">
+                <div className="font-normal text-gray-500 text-xs sm:text-base"><span>{i.category}</span> - <span>{i.date}</span></div>
+                <h4 className="font-normal text-base sm:text-xl">{i.title}</h4>
+                <h5 className="font-normal text-xs sm:text-base">{i.desc}</h5>
             </div>
-            <Link to={i.path}>Read More</Link>
+            <Link className="text-yellow-800" to={i.path}>Read More</Link>
         </div>
      );
 }
