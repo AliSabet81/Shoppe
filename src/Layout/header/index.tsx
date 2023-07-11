@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Button, IconButton, Drawer, ListItemIcon } from '@mui/material';
 import { Link } from 'react-router-dom';
