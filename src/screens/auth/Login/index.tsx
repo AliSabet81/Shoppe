@@ -1,8 +1,8 @@
-import { Box, Button, IconButton, Input, InputAdornment, TextField } from "@mui/material";
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import { Box, Button, IconButton, InputAdornment, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../../routes";
 import UseLogin from "./useLogin";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
 
@@ -21,9 +21,8 @@ const Login = () => {
             <TextField variant="standard" fullWidth id="standard-adornment-weight" 
             {...register('email')} error={Boolean(errors.email?.message)} helperText={errors.email?.message}
                 aria-describedby="standard-weight-helper-text" placeholder="Email"/>
-            <TextField variant="standard" fullWidth id="standard-adornment-weight2" 
+            <TextField variant="standard" fullWidth id="standard-adornment-weight2" type={passwordType}
             {...register('password')} error={Boolean(errors.password?.message)} helperText={errors.password?.message}
-
             InputProps={{
               endAdornment:( 
                   <InputAdornment position="start">

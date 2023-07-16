@@ -41,7 +41,7 @@ const ProductPage = () => {
                         <span className="text-base sm:text-xl text-amber-700">$20.00</span>
                         <p className="text-base text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus consequatur nostrum ipsa nisi nobis minima tempore commodi aliquam, facilis eaque architecto dicta distinctio quidem saepe maiores debitis doloremque corrupti!</p>
                         <div className="hidden sm:flex">
-                            {[1,2,3,4,5].map(i=><StarOutlinedIcon/>)}
+                            {[1,2,3,4,5].map(()=><StarOutlinedIcon/>)}
                             <span className="text-gray-500 text-base">1 customer review</span>
                         </div>
                         <div className="flex gap-6">

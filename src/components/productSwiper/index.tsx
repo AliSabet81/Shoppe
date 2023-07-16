@@ -1,11 +1,10 @@
-import React, { useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Navigation,Pagination,Scrollbar } from 'swiper';
+import { Navigation,Scrollbar } from 'swiper';
 interface IProductSwiper {
     imgs:string[]
 }

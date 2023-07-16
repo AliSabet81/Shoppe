@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
+import { IDownload } from "../../types";
 
-interface IDownload{
-    number?:number,
-    date?:string,
-    status?:string,
-    total?:number,
-    action?:string,
-    download?:string,
-    variant: "download" | "noDownload"
-}
+
 
 const OneDownload = (i:IDownload) => {
     switch (i.variant) {

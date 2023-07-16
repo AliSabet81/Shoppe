@@ -4,14 +4,7 @@ import product3 from "../../public/product3.png"
 import product4 from "../../public/product4.png"
 import product5 from "../../public/product5.png"
 import product6 from "../../public/product6.png"
-
-export interface IProductCard {
-    img: string,
-    name: string,
-    price:number,
-    index:number,
-    path:string
-}
+import { IProductCard } from "../types"
 
 export const Product : IProductCard[] =  [
     {

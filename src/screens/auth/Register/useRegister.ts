@@ -4,13 +4,10 @@ import * as yup from "yup";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../routes";
+import { RegisterService } from "../../../api/services/auth";
+import { IRegisterData } from "../../../types";
 
-interface IRegisterData {
-    email:string,
-    password:string,
-    firstname:string,
-    lastname:string
-  }
+
 
 const UseRegister = () => {
     const [passwordType , setPasswordType] = useState<'password' | 'text'>('password')
@@ -25,8 +22,9 @@ const UseRegister = () => {
         resolver: yupResolver(LoginSchema),
         mode: "onSubmit"
       })
-      const handleRegister = (data:IRegisterData) =>{
-        console.log(data);
+      const handleRegister = async (data:IRegisterData) =>{
+        const res = await RegisterService(data)
+        console.log(res)
         Navigate(ROUTES.Login)
       }
     return {

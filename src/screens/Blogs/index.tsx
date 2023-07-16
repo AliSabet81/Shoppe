@@ -1,6 +1,5 @@
 import { Button, IconButton, Input, InputAdornment } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import Blog from "./blogs";
 import { Outlet } from "react-router-dom";
 import { ROUTES } from "../../routes";
 

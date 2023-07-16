@@ -1,5 +1,7 @@
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, IconButton, InputAdornment } from "@mui/material";
 import UseRegister from "./useRegister";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
 const Register = () => {
     const {register,
@@ -22,7 +24,21 @@ const Register = () => {
                 aria-describedby="standard-weight-helper-text" placeholder="Email"/>
             <TextField variant="standard" className="p-3 !border-slate-200" fullWidth id="standard-adornment-weight" 
                 {...register('password')} error={Boolean(errors.password?.message)} helperText={errors.password?.message}
-                aria-describedby="standard-weight-helper-text" placeholder="Password"/>
+                aria-describedby="standard-weight-helper-text" placeholder="Password" type={passwordType}
+                InputProps={{
+                    endAdornment:( 
+                        <InputAdornment position="start">
+                            <IconButton onClick={()=>{
+                                setPasswordType((prev)=>{
+                                    if (prev === 'password') return 'text'
+                                    return 'password'
+                                })
+                                }}>
+                                {passwordType === "text" ?<RemoveRedEyeOutlinedIcon/> : <VisibilityOffOutlinedIcon/>}
+                            </IconButton>
+                        </InputAdornment>),
+                }}
+                />
             <Button className="sm:!mt-10 sm:!py-4" type="submit" variant="contained" fullWidth sx={{color:"white",bgcolor:"black",":hover":{bgcolor:"black"}}}>Sign Up</Button>
         </Box>
      );

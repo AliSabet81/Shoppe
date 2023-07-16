@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
+import { IHomeSliderCard } from "../../../types";
 
-interface ISliderCard {
-    src:string,
-    name:string,
-    price:number,
-    path:string
-}
+
 import "../../../index.css"
-const HomeSliderCard = (i:ISliderCard) => {
+const HomeSliderCard = (i:IHomeSliderCard) => {
     return ( 
         <div className="relative flex h-homeslide py-8 items-end sm:items-center container">
             <img className="mx-auto absolute h-homeslide top-0 -z-10 rounded-2xl " src={i.src} alt="react logo" style={{ width:"100%"}}/>

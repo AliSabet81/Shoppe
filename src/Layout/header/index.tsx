@@ -2,12 +2,11 @@ import * as React from 'react';
 
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Button, IconButton, Drawer, ListItemIcon } from '@mui/material';
+import { Box, Divider, List, ListItemButton, Button, IconButton, Drawer} from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes';
 import LOGO from "../../../public/LOGO.png"
 import ShoppingCartDrawer from '../../components/cartDrawer';
-const navItems = ['Home', 'About', 'Contact'];
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 

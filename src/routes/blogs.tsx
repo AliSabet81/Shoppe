@@ -2,17 +2,11 @@ import blog1 from "../../public/blog01.png"
 import blog2 from "../../public/blog02.png"
 import blog3 from "../../public/blog03.png"
 import blog4 from "../../public/blog04.png"
+import { IBlogCard } from "../types"
 
 
 
-export interface IBlogCard{
-    img: string ,
-    category: string ,
-    date: string ,
-    title: string ,
-    desc: string ,
-    path: string
-}
+
 
 export const Blogs : IBlogCard[] = [
     {

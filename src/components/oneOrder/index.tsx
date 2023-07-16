@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
+import { IOrder } from "../../types";
 
-interface IOrder{
-    number?:number,
-    date?:string,
-    status?:string,
-    total?:number,
-    action?:string,
-    variant: "Order" | "noOrder"
-}
+
 
 const OneOrder = (i:IOrder) => {
     switch (i.variant) {
