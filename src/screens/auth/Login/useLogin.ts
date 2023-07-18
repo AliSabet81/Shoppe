@@ -3,6 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
 import { ILoginData } from "../../../types";
+import { LoginService } from "../../../api/services/auth";
+import Cookies from "js-cookie";
 
 const UseLogin = () => {
     const [passwordType , setPasswordType] = useState<'password' | 'text'>('password')
@@ -15,8 +17,11 @@ const UseLogin = () => {
         resolver: yupResolver(LoginSchema),
         mode: "onSubmit"
       })
-      const handleLogin = (data:ILoginData) =>{
-        console.log(data);
+      const handleLogin = async (data:ILoginData) =>{
+        const res = await LoginService(data);
+        Cookies.set('token',res.token,{
+          expires:30
+        })
       }
     return {
         register,
