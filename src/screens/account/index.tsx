@@ -18,6 +18,7 @@ const AccountScreen = () => {
       console.log(res);
     });
   }, []);
+  
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
