@@ -38,11 +38,11 @@ export const ROUTES = {
     OurStory: "/aboutUs",
 
     Account: "/account",
-    Dashboard : "/account/dashboard",
-    Orders: "/account/orders",
-    Downloads : "/account/doownloads",
-    Addresses: "/account/addresses",
-    Details: "/account/details",
+    // Dashboard : "/account/dashboard",
+    // Orders: "/account/orders",
+    // Downloads : "/account/doownloads",
+    // Addresses: "/account/addresses",
+    // Details: "/account/details",
 
     Cart : "/cart"
 }

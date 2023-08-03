@@ -1,10 +1,9 @@
-import { Button, Input, Rating, TextField } from "@mui/material";
+import { Button, Input, Rating} from "@mui/material";
 import { useState } from "react";
 import ReviewCard from "../../../components/card/review";
 
 const ProductReviews = () => {
     const [rate , setRate] = useState<number | null>(0)
-    console.log(rate);
     
     return ( 
         <div className="grid grid-cols-2 gap-20">

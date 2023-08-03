@@ -5,9 +5,11 @@ import { useState } from "react";
 import { ILoginData } from "../../../types";
 import { LoginService } from "../../../api/services/auth";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const UseLogin = () => {
     const [passwordType , setPasswordType] = useState<'password' | 'text'>('password')
+    const navigate = useNavigate();
 
     const LoginSchema = yup.object({
         email : yup.string().required().email(),
@@ -22,6 +24,7 @@ const UseLogin = () => {
         Cookies.set('token',res.token,{
           expires:30
         })
+        navigate("/")
       }
     return {
         register,
