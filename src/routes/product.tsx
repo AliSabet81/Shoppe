@@ -17,21 +17,21 @@ export const Product : IProductCard[] =  [
     {
         img:product2,
         name: "Lira Earrings2",
-        price:20,
+        price:25,
         index:1,
         path:'/Shop/liraEarring2'
     },
     {
         img:product3,
         name: "Lira Earrings3",
-        price:20,
+        price:30,
         index:2,
         path:'/Shop/liraEarring3'
     },
     {
         img:product4,
         name: "Lira Earrings4",
-        price:20,
+        price:15,
         index:3,
         path:'/Shop/liraEarring4'
     },
@@ -45,7 +45,7 @@ export const Product : IProductCard[] =  [
     {
         img:product6,
         name: "Lira Earrings6",
-        price:20,
+        price:10,
         index:5,
         path:'/Shop/liraEarring6'
     },

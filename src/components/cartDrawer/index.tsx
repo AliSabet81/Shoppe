@@ -16,7 +16,6 @@ import { Product } from '../../routes/product';
     false
   );
   const {cartQuantity ,cartItems} = useContext(Store)
-  console.log(cartItems);
   const ShopppingTotal = FormatCurrancy(cartItems.reduce((total,cartItem)=>{
     const product = Product.find(e => e.index === cartItem.id)
     return total + (product?.price || 0) * cartItem.quantity

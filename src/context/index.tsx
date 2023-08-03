@@ -14,6 +14,7 @@ export interface ICartProduct {
 }
 export const Store = createContext({} as Istore);
 
+
 export const StoreProvider = ({ children }: { children: ReactElement }) => {
   const [cartItems, setCartItems] = useLocalStorage<ICartProduct[]>(
     "shopping-cart",

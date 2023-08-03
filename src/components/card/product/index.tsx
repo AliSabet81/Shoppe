@@ -1,4 +1,3 @@
-import { IProductCard } from "../../../routes/product";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -7,11 +6,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "../../../context";
 import FormatCurrancy from "../../../utilities/formatCurrency";
+import { IProductCard } from '../../../types';
 
 const ProductCard = (i:IProductCard) => {
     const {getItemQuantity , increaseCartQuantity} = useContext(Store)
     const quantity = getItemQuantity(i.index)
-    console.log(quantity)
     return ( 
         <div className="relative flex flex-col gap-6">
             <img src={i.img} alt="" />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import Cookies from "js-cookie";
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { Box, Divider, List, ListItemButton, Button, IconButton, Drawer} from '@mui/material';
@@ -48,7 +48,7 @@ const Header =()=> {
         <Divider />
         <List>
             <ListItemButton>
-                <Button href={ROUTES.Login} startIcon={<PersonOutlineOutlinedIcon />} sx={{color:"black"}}>My Account</Button>
+                <Button href={Cookies.get("token") ? ROUTES.Login : ROUTES.Account} startIcon={<PersonOutlineOutlinedIcon />} sx={{color:"black"}}>My Account</Button>
             </ListItemButton>
         </List>
     </Box>
@@ -57,7 +57,7 @@ const Header =()=> {
 
   return (
     <div className='container flex items-center sm:pb-4 border-b justify-between'>
-        <Link to={ROUTES.Home}><img src={LOGO} alt="" /></Link>
+        <Link className='hidden sm:block' to={ROUTES.Home}><img src={LOGO} alt="" /></Link>
         <div className='hidden sm:flex items-center gap-12'>
             <div className='flex gap-11'>
                 <Button href={ROUTES.Shop} sx={{color:"black"}}>Shop</Button>
@@ -68,12 +68,12 @@ const Header =()=> {
             <div className='flex gap-6'>
                 <IconButton><SearchIcon/></IconButton>
                 <ShoppingCartDrawer/>
-                <IconButton href={ROUTES.Login}><PersonOutlineOutlinedIcon/></IconButton>
+                <IconButton href={Cookies.get("token") ? ROUTES.Login : ROUTES.Account}><PersonOutlineOutlinedIcon/></IconButton>
             </div>
         </div>
         <div className='sm:hidden w-full'>
           <div className='flex items-center justify-between'>
-          <Link className='w-24' to={ROUTES.Home}><img src={LOGO} alt="" /></Link>
+          <Link className='w-24 sm:hidden' to={ROUTES.Home}><img src={LOGO} alt="" /></Link>
           <div className='flex'>
 
           <ShoppingCartDrawer/>
