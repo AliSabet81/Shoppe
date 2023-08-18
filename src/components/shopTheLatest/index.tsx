@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
-import { Product } from "../../routes/product";
 import ProductCard from "../card/product";
-// import { Product } from "../../routes/product";
-// import ProductCard from "../../components/card/product";
+import { useCallback, useEffect, useState } from "react";
+import { GetProductsService } from "../../api/services/product";
 
 const ShopTheLatest = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [productsList, setProductsList] = useState<any>([]);
+
+  const fetchProductsList = useCallback(async () => {
+    const res = await GetProductsService({ pageNumber: 1, pageSize: 3 });
+    setProductsList(res.data);
+  }, []);
+  useEffect(() => {
+    fetchProductsList();
+  }, [fetchProductsList]);
   return (
     <div className="container mx-auto flex flex-col gap-10">
       <div className="flex justify-between">
@@ -16,14 +25,13 @@ const ShopTheLatest = () => {
         </Link>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-14 justify-items-center">
-        {Product.map((i) => (
+        {productsList.map((i: { _id: number; img: string; name: string; price: number; }) => (
           <ProductCard
-            key={i.index}
-            img={i.img}
+            id={i._id}
+            img={`http://localhost:3333${i.img}`}
             name={i.name}
             price={i.price}
-            index={i.index}
-            path={i.path}
+            path={`/Shop/${i._id}`}
           />
         ))}
       </div>

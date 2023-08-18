@@ -11,42 +11,42 @@ export const Product : IProductCard[] =  [
         img:product1,
         name: "Lira Earrings",
         price:20,
-        index:0,
+        id:0,
         path:'/Shop/liraEarring'
     },
     {
         img:product2,
         name: "Lira Earrings2",
         price:25,
-        index:1,
+        id:1,
         path:'/Shop/liraEarring2'
     },
     {
         img:product3,
         name: "Lira Earrings3",
         price:30,
-        index:2,
+        id:2,
         path:'/Shop/liraEarring3'
     },
     {
         img:product4,
         name: "Lira Earrings4",
         price:15,
-        index:3,
+        id:3,
         path:'/Shop/liraEarring4'
     },
     {
         img:product5,
         name: "Lira Earrings5",
         price:20,
-        index:4,
+        id:4,
         path:'/Shop/liraEarring5'
     },
     {
         img:product6,
         name: "Lira Earrings6",
         price:10,
-        index:5,
+        id:5,
         path:'/Shop/liraEarring6'
     },
 ]

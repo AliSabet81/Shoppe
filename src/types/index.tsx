@@ -11,7 +11,7 @@ export interface ILoginData {
 }
 
 export interface ICartProduct {
-  index: number;
+  id: number;
   quantity: number;
 }
 
@@ -45,7 +45,7 @@ export interface IProductCard {
     img: string,
     name: string,
     price:number,
-    index:number,
+    id:number,
     path:string
 }
 
@@ -55,7 +55,7 @@ export interface IBlogCard{
     date: string ,
     title: string ,
     desc: string ,
-    path: string
+    _id: string
 }
 
 export interface Istore {

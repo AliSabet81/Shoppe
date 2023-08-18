@@ -16,8 +16,10 @@ import { Product } from '../../routes/product';
     false
   );
   const {cartQuantity ,cartItems} = useContext(Store)
+  console.log(cartItems);
+  
   const ShopppingTotal = FormatCurrancy(cartItems.reduce((total,cartItem)=>{
-    const product = Product.find(e => e.index === cartItem.id)
+    const product = Product.find(e => e.id === cartItem.id)
     return total + (product?.price || 0) * cartItem.quantity
 },0))
   const toggleDrawer =
@@ -51,7 +53,7 @@ import { Product } from '../../routes/product';
             </div>
             <div className='flex flex-col overflow-y-scroll gap-6'>
               {cartItems.map(i => (
-                <CartProductCard index={i.id} quantity={i.quantity} />
+                <CartProductCard id={i.id} quantity={i.quantity} />
               ))}
             </div>
             <div className='border-t border-gray-500'>

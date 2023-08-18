@@ -1,4 +1,3 @@
-import ProductSwiper from "../../components/productSwiper";
 import ShopTheLatest from "../../components/shopTheLatest";
 import HomeSlider from "../../components/slider";
 

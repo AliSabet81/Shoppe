@@ -9,14 +9,15 @@ import FormatCurrancy from "../../../utilities/formatCurrency";
 import { IProductCard } from '../../../types';
 
 const ProductCard = (i:IProductCard) => {
+    // console.log(i.id)
     const {getItemQuantity , increaseCartQuantity} = useContext(Store)
-    const quantity = getItemQuantity(i.index)
+    const quantity = getItemQuantity(i.id)
     return ( 
         <div className="relative flex flex-col gap-6">
-            <img src={i.img} alt="" />
+            <img className='rounded-lg' src={i.img} alt="" />
             <div className="absolute top-0 w-full h-96 hidden sm:flex justify-center items-center bg-white bg-opacity-60 opacity-0 transition-all hover:opacity-100">
             <div className='flex opacity-100 gap-4'>
-                <IconButton onClick={()=> increaseCartQuantity(i.index)}><ShoppingCartOutlinedIcon/></IconButton>
+                <IconButton onClick={()=> increaseCartQuantity(i.id)}><ShoppingCartOutlinedIcon/></IconButton>
                 <IconButton href={i.path}><RemoveRedEyeOutlinedIcon/></IconButton>
                 <IconButton><FavoriteBorderIcon/></IconButton>
             </div>

@@ -36,7 +36,7 @@ const Header =()=> {
                 <Button href={ROUTES.OurStory} sx={{color:"black"}}>Our Story</Button>
             </ListItemButton>
             <ListItemButton>
-                <Button href={`${ROUTES.Blog}/fasion`} sx={{color:"black"}}>Blog</Button>
+                <Button href={`${ROUTES.Blog}/fashion`} sx={{color:"black"}}>Blog</Button>
             </ListItemButton>
             <ListItemButton>
                 <Button href={ROUTES.Contact} sx={{color:"black"}}>Contact</Button>
@@ -61,7 +61,7 @@ const Header =()=> {
         <div className='hidden sm:flex items-center gap-12'>
             <div className='flex gap-11'>
                 <Button href={ROUTES.Shop} sx={{color:"black"}}>Shop</Button>
-                <Button href={`${ROUTES.Blog}/fasion`} sx={{color:"black"}}>Blog</Button>
+                <Button href={`${ROUTES.Blog}/fashion`} sx={{color:"black"}}>Blog</Button>
                 <Button href={ROUTES.OurStory} sx={{color:"black"}}>Our Story</Button>
             </div>
             <Divider orientation="vertical" flexItem />

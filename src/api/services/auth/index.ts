@@ -17,8 +17,3 @@ export const UserValidateService =async () => {
     const res = await instance.get("/auth/UserValidate")
     return res.data
 }
-
-export const GetUserNameService =async () => {
-    const res = await instance.get("/auth/UserInfo")
-    return res.data
-}
