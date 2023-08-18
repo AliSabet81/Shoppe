@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ProductSwiper from "../../components/productSwiper";
 import product from "../../../public/product1.png";
 import product1 from "../../../public/product2.png";
@@ -11,7 +12,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import ProductInformation from "./Information";
 import ProductReviews from "./reciews";
 import SimilarProduct from "../../components/similarProduct";
@@ -23,12 +24,9 @@ const ProductPage = () => {
   //   console.log(params.id);
   const [productInfo, setProductInfo] = useState<any>();
   useMemo(async () => {
-    const res = await GetSingleProductService(params.id);
+    const res = await GetSingleProductService(params.id ?? '');
     setProductInfo(res);
-  }, []);
-  useEffect(() => {
-    console.log(productInfo);
-  }, [productInfo]);
+  }, [params.id]);
 
   const [active, setActive] = useState<string>("Description");
   const ProductDesc = () => {
@@ -45,7 +43,7 @@ const ProductPage = () => {
           </span>
         );
       case "information":
-        return <ProductInformation id={params.id} />;
+        return <ProductInformation id={params.id ?? ''} />;
       case "Reviews":
         return <ProductReviews />;
     }

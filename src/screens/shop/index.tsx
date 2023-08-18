@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Button, IconButton, Input, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ProductCard from "../../components/card/product";
@@ -17,7 +18,6 @@ const ShopScreen = () => {
   useEffect(() => {
     fetchProductsList();
   }, [fetchProductsList]);
-  console.log(productsList);
   return (
     <div className="flex flex-col gap-10 my-6 sm:my-24 container">
       <h1 className="text-xl sm:text-3xl font-medium">Shop The Latest</h1>

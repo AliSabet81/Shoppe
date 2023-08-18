@@ -31,6 +31,7 @@ export const GetProductsService = async (
   return res.data;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const GetSingleProductService = async (id: string): Promise<any> => {
   const res = await instance.get(`/products/${id}`);
   return res.data;

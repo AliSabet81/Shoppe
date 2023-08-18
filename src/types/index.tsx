@@ -55,7 +55,7 @@ export interface IBlogCard{
     date: string ,
     title: string ,
     desc: string ,
-    path: string
+    _id: string
 }
 
 export interface Istore {
