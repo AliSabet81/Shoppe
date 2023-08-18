@@ -26,7 +26,7 @@ export const ProductSwiper = (i:IProductSwiper) => {
             className="w-full h-productslide"
           >
             {i.imgs.map(i=>
-                <SwiperSlide >
+                <SwiperSlide key={i}>
                     <img className='h-productslide' src={i} />
                 </SwiperSlide>
             )}

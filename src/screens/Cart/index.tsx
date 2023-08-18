@@ -9,7 +9,7 @@ const CartPage = () => {
   const { cartItems } = useContext(Store);
   const ShopppingTotal = FormatCurrancy(
     cartItems.reduce((total, cartItem) => {
-      const product = Product.find((e) => e.index === cartItem.id);
+      const product = Product.find((e) => e.id === cartItem.id);
       return total + (product?.price || 0) * cartItem.quantity;
     }, 0)
   );
@@ -21,7 +21,7 @@ const CartPage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
         <div className="flex flex-col gap-6 sm:gap-10">
           {cartItems.map((i) => (
-            <CartPageProductCard index={i.id} quantity={i.quantity} />
+            <CartPageProductCard id={i.id} quantity={i.quantity} />
           ))}
         </div>
         <div className="flex bg-gray-200 rounded sm:bg-white flex-col p-4 sm:px-14 sm:py-10 gap-10">

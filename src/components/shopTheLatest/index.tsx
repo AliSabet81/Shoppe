@@ -23,8 +23,7 @@ const ShopTheLatest = () => {
             name={i.name}
             price={i.price}
             index={i.index}
-            path={i.path}
-          />
+            path={i.path} id={i.id}          />
         ))}
       </div>
     </div>

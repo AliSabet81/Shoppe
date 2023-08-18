@@ -7,7 +7,7 @@ import Details from "./Details";
 import { useState, useEffect } from "react";
 
 import useAuth from "../../hooks/useAuth";
-import { GetUserNameService } from "../../api/services/auth";
+import { GetUserNameService } from "../../api/services/user";
 import { IRegisterData } from "../../types";
 const AccountScreen = () => {
   const [user, setUser] = useState<IRegisterData>();
